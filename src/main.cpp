@@ -2,6 +2,7 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <Adafruit_DotStar.h>
+#include <Adafruit_SleepyDog.h>
 
 //#define DEBUG
 #define DATAPIN INTERNAL_DS_DATA
@@ -16,6 +17,8 @@ Adafruit_DotStar pixels(NUMPIXELS, DATAPIN, CLOCKPIN , DOTSTAR_BGR);
 Pixy2 pixy;
 void setup()
 {
+  Watchdog.enable(2000);
+
   #ifdef DEBUG
   Serial.begin(9600);
   Serial.print("Starting...\n");
@@ -29,6 +32,8 @@ void setup()
 
   pixy.init();
   pixy.setLamp(1, 0);
+
+  Watchdog.reset();
 }
 
 int block;
@@ -140,4 +145,5 @@ void loop()
   }
 
   pixels.show();
+  Watchdog.reset();
 }
