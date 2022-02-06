@@ -29,6 +29,8 @@ void setup()
 
   pinMode(RED_DIO_PIN, OUTPUT);
   pinMode(BLUE_DIO_PIN, OUTPUT);
+  digitalWrite(RED_DIO_PIN, 0);
+  digitalWrite(BLUE_DIO_PIN, 0);
 
   pixy.init();
   pixy.setLamp(1, 0);
@@ -42,8 +44,8 @@ bool isBlue = false;
 
 void turnLEDRedON()
 {
-  digitalWrite(RED_DIO_PIN, LOW);
-  digitalWrite(BLUE_DIO_PIN, HIGH);
+  digitalWrite(RED_DIO_PIN, HIGH);
+  digitalWrite(BLUE_DIO_PIN, LOW);
   pixy.setLED(255, 0, 0);
   #ifdef DEBUG
   Serial.print("I see red\n");
