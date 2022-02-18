@@ -26,6 +26,7 @@ void setup()
 
   pixels.begin();
   pixels.clear();
+  pixels.show();
 
   pinMode(RED_DIO_PIN, OUTPUT);
   pinMode(BLUE_DIO_PIN, OUTPUT);
