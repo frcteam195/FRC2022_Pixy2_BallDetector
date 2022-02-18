@@ -93,6 +93,11 @@ int timeBlue = 0;
 
 void loop()
 {
+  //If pixy2 is not connected, hang to trigger watchdog reset
+  while (pixy.getVersion() <= 0)
+  {
+    ;
+  }
   //set_color(block);
 
   //pixels.show();
