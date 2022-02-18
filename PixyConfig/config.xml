@@ -1,0 +1,6 @@
+<PixyMon_parameters>
+ <data key="Document folder" type="STRING" value="/home/team195/Documents/PixyMon"/>
+ <data key="Pixy start command" type="STRING" value=""/>
+ <data key="Highlight overexposure" type="INT8" value="0"/>
+ <data key="Debug" type="INT32" value="0"/>
+</PixyMon_parameters>
